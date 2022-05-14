@@ -1,0 +1,60 @@
+{
+  "customerDetails": [
+    {
+      "customerName": "vamshi",
+      "email": "vam@",
+      "phoneNumber": 9491112941,
+      "password": "vam@123",
+      "confirmPassword": "",
+      "branch": [
+        {
+          "branchName": "sbi",
+          "email": "sbi@gmail.com",
+          "phoneNumber": 9491112941,
+          "branchCity": "SIDDIPET",
+          "branchAddress": "3-34 VADLUR-BEGUMPET",
+          "branchType": "mainBranch",
+          "branchBusiness": true
+        },
+        {
+          "branchName": "axis",
+          "email": "axis@gmail.com",
+          "phoneNumber": 9848173243,
+          "branchCity": "pdpl",
+          "branchAddress": "25 Bickerdike Avenue",
+          "branchType": "mainBranch",
+          "branchBusiness": true
+        },
+        {
+          "branchName": "sbi",
+          "email": "sbi@gmail.com",
+          "phoneNumber": 9491112941,
+          "branchCity": "SIDDIPET",
+          "branchAddress": "3-34 VADLUR-BEGUMPET",
+          "branchType": "mainBranch",
+          "branchBusiness": true
+        }
+      ],
+      "id": 1
+    },
+    {
+      "customerName": "vamshi",
+      "email": "vamshireddygaddam33@gmail.com",
+      "phoneNumber": "7776939284",
+      "password": "Vamshi@123",
+      "confirmPassword": "Vamshi@123",
+      "branches": [
+        {
+          "branchName": "cse",
+          "email": "vamshireddygaddam33@gmail.com",
+          "phoneNumber": 7776939284,
+          "branchCity": "Manchester",
+          "branchAddress": "25 Bickerdike Avenue",
+          "branchType": "mainBranch",
+          "branchBusiness": true
+        }
+      ],
+      "id": 2
+    }
+  ]
+}

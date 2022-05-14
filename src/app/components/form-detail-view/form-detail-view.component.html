@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="customer-table w-75 m-auto">
+        <h2>Customer Details</h2>
+        <table class="table table-bordered table-striped ">
+            <tbody *ngFor="let customer of customerArray;let i=index;" class="shadow" >
+                <tr>
+                    <th>Customer Name:</th>
+                    <td>{{customer?.customerName}}</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>{{customer?.email}}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number:</th>
+                    <td>{{customer?.phoneNumber}}</td>
+                </tr>
+                <h4>Branch1:</h4>
+
+                <tr>
+                    <th>Branch Name:</th>
+                    <td>{{customer?.branch[0]?.branchName}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Email:</th>
+                    <td>{{customer?.branch[0]?.email}}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number:</th>
+                    <td>{{customer?.branch[0]?.phoneNumber}}</td>
+                </tr>
+                <tr>
+                    <th>Branch City:</th>
+                    <td>{{customer?.branch[0]?.branchCity}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Address:</th>
+                    <td>{{customer?.branch[0]?.branchAddress}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Type:</th>
+                    <td>{{customer?.branch[0]?.branchType}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Business:</th>
+                    <td>{{customer?.branch[0]?.branchBusiness}}</td>
+                </tr>
+                <h4>Branch2:</h4>
+                <tr>
+                    <th>Branch Name:</th>
+                    <td>{{customer?.branch[1]?.branchName}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Email:</th>
+                    <td>{{customer?.branch[1]?.email}}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number:</th>
+                    <td>{{customer?.branch[1]?.phoneNumber}}</td>
+                </tr>
+                <tr>
+                    <th>Branch City:</th>
+                    <td>{{customer?.branch[1]?.branchCity}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Address:</th>
+                    <td>{{customer?.branch[1]?.branchAddress}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Type:</th>
+                    <td>{{customer?.branch[1]?.branchType}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Business:</th>
+                    <td>{{customer?.branch[1]?.branchBusiness}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

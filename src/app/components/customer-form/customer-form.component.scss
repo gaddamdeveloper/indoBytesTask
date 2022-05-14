@@ -1,0 +1,49 @@
+.addbutton{
+    text-align: center;
+margin-top:25px;
+}
+.submitButton{
+    text-align: center;
+     margin-top:25px; 
+}
+.register{
+    text-align: center;
+    color: #298abc;
+
+    
+}
+.branch{
+    text-align: center;
+    color:#298abc;
+     
+}
+.customer-form{
+    width: 50%;
+}
+
+.branch-details{
+  width:50%;  
+}
+.custom-bg{
+    background-color: #1883BB;
+    color: white;
+    font-weight: 600;
+    width: 150px;
+}
+.custom-outline{
+   border: 2px solid  #1883BB; 
+   color:#1883BB;
+    font-weight: 600;
+    width: 150px;
+}
+// input.ng-invalid.ng-touched   
+input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+input.ng-touched.ng-valid{
+    border: 1px solid green;
+}
+input[type="text"],input[type="email"],input[type="password"],input[type="number"]{
+    box-shadow:none;
+
+}

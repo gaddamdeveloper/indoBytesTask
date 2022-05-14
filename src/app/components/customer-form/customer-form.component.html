@@ -1,0 +1,209 @@
+<div class="container mt-5">
+    <h2 class="register">Customer Registration Form</h2>
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <div class="customer-form  m-auto shadow bg-white p-5">
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label for="custName">Customer Name</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" name="custName" id="custName" class="form-control"
+                        placeholder="Enter Customer Name" formControlName="customerName">
+                    <div *ngIf="getCustomerName().invalid&&getCustomerName().touched">
+                        <div *ngIf="getCustomerName().errors.required">
+                            <span class="text-danger">CustomerName Is Required</span>
+                        </div>
+                        
+                        <div *ngIf="getCustomerName().errors.minlength">
+                            <span class="text-danger">Enter min 5 Numbers</span>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email Address"
+                        formControlName="email">
+
+                        <div *ngIf="getEmail().invalid&&getEmail().touched">
+                            <div *ngIf="f.email.errors.required"><span class="text-danger">Email Is Required</span>
+                            </div>
+                            <div *ngIf="f.email.errors.email"><span class="text-danger">Email must be a valid email address</span></div>
+                        </div> 
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label for="phoneNumber">Phone Number</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" name="phoneNumber" id="phoneNumber" class="form-control"
+                        placeholder="Enter Phone Number" formControlName="phoneNumber" maxlength="10">
+                    <div *ngIf="getPhoneNumber().invalid&&getPhoneNumber().touched">
+                        <div *ngIf="getPhoneNumber().errors.required">
+                            <span class="text-danger">PhoneNumber is Required</span>  
+                        </div>
+                        <!-- <div *ngIf="getPhoneNumber().errors.minlength">
+                            <span class="text-danger">Enter Minimum 10 Numbers</span>  
+                        </div>
+
+                        <div *ngIf="getPhoneNumber().errors.maxlength">
+                            <span class="text-danger">Enter maxlength 10 Numbers</span>  
+                        </div>-->
+                    </div> 
+                </div>
+            </div>
+            <div class="row mt-3">
+
+                <div class="col-md-4">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="password" name="password" id="password" class="form-control"
+                        placeholder="Enter Password" formControlName="password">
+
+                    <div *ngIf="getPassword().invalid&&getPassword().touched">
+                        <div *ngIf="getPassword().errors.required">
+                            <span class="text-danger">Password is Required</span>
+                        </div>
+                        <div *ngIf="getPassword().errors.pattern">
+                            <span class="text-danger">Enter valid password</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label for="confirmPassword">Confirm Password</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
+                        formControlName="confirmPassword" placeholder="Enter Confirm Password">
+                    <div *ngIf="getConfirmPassword().invalid && getConfirmPassword().touched">
+                        <div *ngIf="getConfirmPassword().errors.required">
+                            <span class="text-danger">Password is Required</span>
+                        </div>
+                        <div *ngIf="'mismatch'">
+                            <span class="text-danger">ConfirmPassword is Required</span>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div formArrayName="branches">
+            <div *ngFor="let branchDetail of branches.controls ;let i=index; ">
+                <div [formGroupName]="i">
+                    <div class="branch-details m-auto shadow bg-white p-5 mt-5">
+                        <h2 class="branch">Branch Details {{i+1}}</h2>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="custName">Branch Name</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" name="custName" id="custName" class="form-control"
+                                    placeholder=" Enter Branch Name" formControlName="branchName">
+                                <div
+                                    *ngIf="branchDetail.controls['branchName'].touched &&branchDetail.controls['branchName'].hasError('required') ">
+                                    <span class="text-danger">Branch Name is Required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="custName">Email</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="email" name="email" id="email" class="form-control"
+                                    placeholder="Enter Email Address" formControlName="email">
+                                    <div
+                                    *ngIf="branchDetail.controls['email'].touched &&branchDetail.controls['email'].hasError('required') ">
+                                    <span class="text-danger">Email is Required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="custName">Phone Number</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="number" name="number" id="number" class="form-control"
+                                    placeholder="Enter Phone Number" formControlName="phoneNumber">
+
+                                    <div
+                                    *ngIf="branchDetail.controls['phoneNumber'].touched &&branchDetail.controls['phoneNumber'].hasError('required') ">
+                                    <span class="text-danger">PhoneNumber is Required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="brnchName">Branch City</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" name="cityName" id="cityName" class="form-control"
+                                    placeholder="Enter Branch City" formControlName="branchCity">
+                                    <div
+                                    *ngIf="branchDetail.controls['branchCity'].touched &&branchDetail.controls['branchCity'].hasError('required') ">
+                                    <span class="text-danger">BranchCity is Required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="brnchAddress">Branch Address</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" name="Address" id="Address" class="form-control"
+                                    placeholder="Enter Branch Address" formControlName="branchAddress">
+
+                                    <div
+                                    *ngIf="branchDetail.controls['branchAddress'].touched &&branchDetail.controls['branchAddress'].hasError('required') ">
+                                    <span class="text-danger">BranchAddress is Required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="brnchCity">Branch Type</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="radio" value="mainBranch" name="branchType" checked
+                                    formControlName="branchType">
+                                <label for="brnchCity">Main Branch</label>
+                                <input type="radio" value="subBranch" name="branchType" formControlName="branchType">
+                                <label for="brnchCity">Sub Branch</label>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="brnchBusiness">Branch Business</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="checkbox" id="marketing" name="Marketing" value="Marketing"
+                                    formControlName="branchBusiness">
+                                <label for="branch">Marketing</label>
+                                <input type="checkbox" name="it" id="it" value="it" formControlName="branchBusiness">
+                                <label for="branch1">IT</label>
+                                <input type="checkbox" name="bpo" id="bpo" value="bpo" formControlName="branchBusiness">
+                                <label for="branch2">BPO</label>
+                                <input type="checkbox" name="electronics" id="electronics" value="electronics"
+                                    formControlName="branchBusiness">
+                                <label for="branch3">Electronics</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="addbutton">
+            <button type="button" class="btn custom-outline" (click)="onAdd"> + ADD BRANCH</button>
+        </div>
+        <div class="submitButton mt-3">
+            <button type="submit" class="btn custom-bg" [disabled]="!customerForm.valid">SUBMIT</button>
+        </div>
+    </form>
+</div>
